@@ -24,7 +24,7 @@ public class Person : MonoBehaviour {
     
     public Vector3 LookDirection;
 	void Start () {
-	
+	    
 	}
 	
 	// Update is called once per frame

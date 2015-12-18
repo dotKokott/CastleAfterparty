@@ -5,6 +5,8 @@ public class Strobe : MonoBehaviour {
 
     public Light Light;
     public float StrobeSpeed = 0.2f;
+
+    public int Channel;
 	void Start () {
         Light = GetComponent<Light>();
 	}
@@ -22,6 +24,6 @@ public class Strobe : MonoBehaviour {
         //    }
         //}
 
-        Light.intensity = AudioAnal.currentValues[3] * 100;
+        Light.intensity = AudioAnal.currentValues[Channel] * 100;
 	}
 }

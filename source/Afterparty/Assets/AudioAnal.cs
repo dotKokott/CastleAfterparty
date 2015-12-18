@@ -4,13 +4,18 @@ using System.Collections;
 public class AudioAnal : MonoBehaviour {
 
     public AudioListener Listener;
+    public AudioSource Source;
 
     float[] samples;
+
+    public AudioClip[] Clips;
+    public int CurrentClip = 0;
 
     public static float[] currentValues;
 	// Use this for initialization
 	IEnumerator Start () {
         Listener = GetComponent<AudioListener>();
+        Source = GetComponent<AudioSource>();
 
         samples = new float[512];
 
@@ -38,8 +43,28 @@ public class AudioAnal : MonoBehaviour {
         
     }
 	
-	// Update is called once per frame
+	
 	void Update () {
-	    
+        if (Input.GetMouseButtonDown(0)) {
+            CurrentClip++;
+            if (CurrentClip == Clips.Length) {
+                CurrentClip = 0;
+            }
+
+            Source.clip = Clips[CurrentClip];
+            Debug.Log(Source.clip);
+            Source.Play();
+        }
+
+        if (Input.GetMouseButtonDown(1)) {
+            CurrentClip--;
+            if (CurrentClip == -1) {
+                CurrentClip = Clips.Length -1;
+            }
+
+            Source.clip = Clips[CurrentClip];
+            Source.Play();
+        }
+
 	}
 }
