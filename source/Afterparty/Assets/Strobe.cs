@@ -15,10 +15,10 @@ public class Strobe : MonoBehaviour {
 
         if (timer > StrobeSpeed) {
             timer = 0;
-            if (Light.intensity == 8) {
+            if (Light.intensity == 6) {
                 Light.intensity = 0;
             } else if (Light.intensity == 0) {
-                Light.intensity = 8;
+                Light.intensity = 6;
             }
         }
 	}
