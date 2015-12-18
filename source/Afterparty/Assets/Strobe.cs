@@ -13,13 +13,15 @@ public class Strobe : MonoBehaviour {
 	void FixedUpdate () {
         timer += Time.deltaTime;
 
-        if (timer > StrobeSpeed) {
-            timer = 0;
-            if (Light.intensity == 6) {
-                Light.intensity = 0;
-            } else if (Light.intensity == 0) {
-                Light.intensity = 6;
-            }
-        }
+        //if (timer > StrobeSpeed) {
+        //    timer = 0;
+        //    if (Light.intensity == 6) {
+        //        Light.intensity = 0;
+        //    } else if (Light.intensity == 0) {
+        //        Light.intensity = 6;
+        //    }
+        //}
+
+        Light.intensity = AudioAnal.currentValues[3] * 100;
 	}
 }
