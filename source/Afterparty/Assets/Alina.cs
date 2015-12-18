@@ -35,5 +35,12 @@ public class Alina : MonoBehaviour {
             Bottle.SetActive( true );
             Bag.SetActive( false );
         }
+
+        var person = hit.gameObject.GetComponent<Person>();
+        if( person ) {
+            Falafel.SetActive( false );
+            Bottle.SetActive( false );
+            Bag.SetActive( false );
+        }
     }
 }

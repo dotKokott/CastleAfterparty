@@ -20,7 +20,7 @@ public class Person : MonoBehaviour {
     public int CurrentWaypoint = 0;
     public int WayDirection = 1;
 
-
+    public string Name;
     
     public Vector3 LookDirection;
 	void Start () {
@@ -48,6 +48,9 @@ public class Person : MonoBehaviour {
                 }
                 break;
             case State.Walking:
+                if(Waypoints.Length == 0) {
+                    return;
+                }
                 var targetVec = Waypoints[CurrentWaypoint].position - transform.position;
                 targetVec.y = 0;
 
